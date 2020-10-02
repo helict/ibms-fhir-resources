@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="1367aa02-1a96-44e4-9714-3b60b77f4926" />
+  <meta>
+    <versionId value="17" />
+    <lastUpdated value="2020-09-18T10:27:20.57+00:00" />
+  </meta>
+  <url value="http://helict.de/fhir/StructureDefinition/BasisPatient" />
+  <name value="BasisPatient" />
+  <status value="draft" />
+  <date value="2020-09-18T10:27:22.4298873+00:00" />
+  <description value="Diese Profil beinhaltet alle Informationen zu einem Patienten, die zur systemübergreifenden Identifikation notwendig sind." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="loinc" />
+    <uri value="http://loinc.org" />
+    <name value="LOINC code for the element" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Patient" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Patient" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type.coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:VersichertenID_GKV">
+      <path value="Patient.identifier" />
+      <sliceName value="VersichertenID_GKV" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-kvid-10" />
+      </type>
+      <example>
+        <label value="KVID-10" />
+        <valueIdentifier>
+          <use value="official" />
+          <type>
+            <coding>
+              <system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
+              <code value="GKV" />
+            </coding>
+          </type>
+          <system value="http://fhir.de/NamingSystem/gkv/kvid-10" />
+          <value value="G995030567" />
+        </valueIdentifier>
+      </example>
+    </element>
+    <element id="Patient.identifier:VersichertenID_GKV.use">
+      <path value="Patient.identifier.use" />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:VersichertenID_GKV.type.coding:GKV-Type">
+      <path value="Patient.identifier.type.coding" />
+      <sliceName value="GKV-Type" />
+      <example>
+        <label value="KVID-10" />
+        <valueCoding>
+          <system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
+          <code value="GKV" />
+        </valueCoding>
+      </example>
+    </element>
+    <element id="Patient.identifier:VersichertenID_GKV.type.coding:GKV-Type.system">
+      <path value="Patient.identifier.type.coding.system" />
+      <example>
+        <label value="KVID-10" />
+        <valueUri value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
+      </example>
+    </element>
+    <element id="Patient.identifier:VersichertenID_GKV.type.coding:GKV-Type.code">
+      <path value="Patient.identifier.type.coding.code" />
+      <example>
+        <label value="KVID-10" />
+        <valueCode value="GKV" />
+      </example>
+    </element>
+    <element id="Patient.identifier:VersichertenID_GKV.system">
+      <path value="Patient.identifier.system" />
+      <example>
+        <label value="KVID-10" />
+        <valueUri value="http://fhir.de/NamingSystem/gkv/kvid-10" />
+      </example>
+    </element>
+    <element id="Patient.identifier:VersichertenID_GKV.value">
+      <path value="Patient.identifier.value" />
+      <example>
+        <label value="KVID-10" />
+        <valueString value="G995030567" />
+      </example>
+    </element>
+    <element id="Patient.identifier:OrganizationPatientId">
+      <path value="Patient.identifier" />
+      <sliceName value="OrganizationPatientId" />
+      <min value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-pid" />
+      </type>
+      <example>
+        <label value="Identity Provider PID" />
+        <valueIdentifier>
+          <use value="usual" />
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+              <code value="MR" />
+            </coding>
+          </type>
+          <system value="urn:oid:1.2.3.4.5" />
+          <value value="1234567890" />
+        </valueIdentifier>
+      </example>
+    </element>
+    <element id="Patient.identifier:OrganizationPatientId.use">
+      <path value="Patient.identifier.use" />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:OrganizationPatientId.system">
+      <path value="Patient.identifier.system" />
+      <example>
+        <label value="Identity Provider PID" />
+        <valueUri value="urn:oid:1.2.3.4.5" />
+      </example>
+    </element>
+    <element id="Patient.identifier:OrganizationPatientId.value">
+      <path value="Patient.identifier.value" />
+      <example>
+        <label value="Identity Provider PID" />
+        <valueString value="1234567890" />
+      </example>
+    </element>
+    <element id="Patient.active">
+      <path value="Patient.active" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name">
+      <path value="Patient.name" />
+      <min value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <example>
+        <label value="Fritz" />
+        <valueHumanName>
+          <use value="official" />
+          <text value="Prof. Dr. med. Dr. rer. nat. Fritz Julius Karl Freiherr von und zu Rathenburg vor der Isar" />
+          <family value="Freiherr von und zu Rathenburg vor der Isar" />
+          <given value="Fritz" />
+          <given value="Julius" />
+          <given value="Karl" />
+          <prefix value="Prof. Dr. med. Dr. rer. nat." />
+        </valueHumanName>
+      </example>
+    </element>
+    <element id="Patient.name.use">
+      <path value="Patient.name.use" />
+      <example>
+        <label value="Offiziell" />
+        <valueCode value="official" />
+      </example>
+    </element>
+    <element id="Patient.name.family">
+      <path value="Patient.name.family" />
+      <min value="1" />
+      <example>
+        <label value="Fritz, Name" />
+        <valueString value="Freiherr von und zu Rathenburg vor der Isar" />
+      </example>
+    </element>
+    <element id="Patient.name.family.extension">
+      <path value="Patient.name.family.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.name.family.extension:namenszusatz">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="namenszusatz" />
+    </element>
+    <element id="Patient.name.family.extension:namenszusatz.value[x]">
+      <path value="Patient.name.family.extension.value[x]" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="Freiherr" />
+      </example>
+    </element>
+    <element id="Patient.name.family.extension:nachname">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="nachname" />
+    </element>
+    <element id="Patient.name.family.extension:nachname.value[x]">
+      <path value="Patient.name.family.extension.value[x]" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="Rathenburg vor der Isa" />
+      </example>
+    </element>
+    <element id="Patient.name.family.extension:vorsatzwort">
+      <path value="Patient.name.family.extension" />
+      <sliceName value="vorsatzwort" />
+    </element>
+    <element id="Patient.name.family.extension:vorsatzwort.value[x]">
+      <path value="Patient.name.family.extension.value[x]" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="von und zu" />
+      </example>
+    </element>
+    <element id="Patient.name.given">
+      <path value="Patient.name.given" />
+      <min value="1" />
+      <example>
+        <label value="Erster Vorname" />
+        <valueString value="Fritz" />
+      </example>
+      <example>
+        <label value="Zweiter Vorname" />
+        <valueString value="Julius" />
+      </example>
+      <example>
+        <label value="Dritter Vorname" />
+        <valueString value="Karl" />
+      </example>
+    </element>
+    <element id="Patient.name.prefix.extension">
+      <path value="Patient.name.prefix.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.name.prefix.extension:prefix-qualifier">
+      <path value="Patient.name.prefix.extension" />
+      <sliceName value="prefix-qualifier" />
+    </element>
+    <element id="Patient.name.prefix.extension:prefix-qualifier.value[x]">
+      <path value="Patient.name.prefix.extension.value[x]" />
+      <example>
+        <label value="Fritz, Akademischer Titel (AC)" />
+        <valueCode value="Prof. Dr. med. Dr. rer. nat" />
+      </example>
+    </element>
+    <element id="Patient.name.period">
+      <path value="Patient.name.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom">
+      <path value="Patient.telecom" />
+      <min value="1" />
+    </element>
+    <element id="Patient.telecom.system">
+      <path value="Patient.telecom.system" />
+      <min value="1" />
+    </element>
+    <element id="Patient.telecom.value">
+      <path value="Patient.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.telecom.rank">
+      <path value="Patient.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom.period">
+      <path value="Patient.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.deceased[x]">
+      <path value="Patient.deceased[x]" />
+      <max value="0" />
+    </element>
+    <element id="Patient.address">
+      <path value="Patient.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <example>
+        <label value="Fritz" />
+        <valueAddress>
+          <use value="home" />
+          <type value="postal" />
+          <line value="Musterweg 42, Hinterhof 2. Etage" />
+          <city value="Berlin" />
+          <state value="DE-BE" />
+          <postalCode value="10787" />
+          <country value="DE" />
+        </valueAddress>
+      </example>
+    </element>
+    <element id="Patient.address.line">
+      <path value="Patient.address.line" />
+      <min value="1" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="Musterweg 42, Hinterhof 2. Etage" />
+      </example>
+    </element>
+    <element id="Patient.address.line.extension">
+      <path value="Patient.address.line.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address.line.extension:Strasse">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Strasse" />
+    </element>
+    <element id="Patient.address.line.extension:Strasse.value[x]">
+      <path value="Patient.address.line.extension.value[x]" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="Musterweg" />
+      </example>
+    </element>
+    <element id="Patient.address.line.extension:Hausnummer">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Hausnummer" />
+    </element>
+    <element id="Patient.address.line.extension:Hausnummer.value[x]">
+      <path value="Patient.address.line.extension.value[x]" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="42" />
+      </example>
+    </element>
+    <element id="Patient.address.line.extension:Adresszusatz">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Adresszusatz" />
+    </element>
+    <element id="Patient.address.line.extension:Adresszusatz.value[x]">
+      <path value="Patient.address.line.extension.value[x]" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="Hinterhof 2. Etage" />
+      </example>
+    </element>
+    <element id="Patient.address.city">
+      <path value="Patient.address.city" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="Berlin" />
+      </example>
+    </element>
+    <element id="Patient.address.state">
+      <path value="Patient.address.state" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="DE-BE" />
+      </example>
+    </element>
+    <element id="Patient.address.postalCode">
+      <path value="Patient.address.postalCode" />
+      <min value="1" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="10787" />
+      </example>
+    </element>
+    <element id="Patient.address.country">
+      <path value="Patient.address.country" />
+      <example>
+        <label value="Fritz" />
+        <valueString value="DE" />
+      </example>
+    </element>
+    <element id="Patient.address.period">
+      <path value="Patient.address.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.multipleBirth[x]">
+      <path value="Patient.multipleBirth[x]" />
+      <max value="0" />
+    </element>
+    <element id="Patient.photo">
+      <path value="Patient.photo" />
+      <max value="0" />
+    </element>
+    <element id="Patient.communication">
+      <path value="Patient.communication" />
+      <max value="0" />
+    </element>
+    <element id="Patient.generalPractitioner">
+      <path value="Patient.generalPractitioner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.managingOrganization">
+      <path value="Patient.managingOrganization" />
+      <max value="0" />
+    </element>
+    <element id="Patient.link">
+      <path value="Patient.link" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
