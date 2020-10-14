@@ -6,6 +6,7 @@ if exist ./validator_cli.jar (
         -ig basisprofil-de-r4\extensions^
         -ig basisprofil-de-r4\datentypen-profile^
         -ig basisprofil-de-r4\ressourcen-profile^
+        -ig basisprofil-de-r4\terminologie^
         -profile http://helict.de/fhir/StructureDefinition/BasisPatient^
         -version 4.0.1^
 	-recurse -debug
