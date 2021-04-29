@@ -2,13 +2,13 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="1367aa02-1a96-44e4-9714-3b60b77f4926" />
   <meta>
-    <versionId value="21" />
-    <lastUpdated value="2021-04-29T09:02:32.966+00:00" />
+    <versionId value="23" />
+    <lastUpdated value="2021-04-29T13:00:28.463+00:00" />
   </meta>
   <url value="http://helict.de/fhir/StructureDefinition/BasisPatient" />
   <name value="BasisPatient" />
   <status value="draft" />
-  <date value="2021-04-29T09:02:16.1946053+00:00" />
+  <date value="2021-04-29T12:55:58.389468Z" />
   <description value="Diese Profil beinhaltet alle Informationen zu einem Patienten, die zur systemübergreifenden Identifikation notwendig sind." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -314,18 +314,6 @@
         <rules value="open" />
       </slicing>
       <min value="1" />
-    </element>
-    <element id="Patient.telecom.system">
-      <path value="Patient.telecom.system" />
-      <min value="1" />
-    </element>
-    <element id="Patient.telecom.value">
-      <path value="Patient.telecom.value" />
-      <min value="1" />
-    </element>
-    <element id="Patient.telecom.period">
-      <path value="Patient.telecom.period" />
-      <max value="0" />
     </element>
     <element id="Patient.telecom:RegistrationEmail">
       <path value="Patient.telecom" />
