@@ -2,13 +2,13 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="1367aa02-1a96-44e4-9714-3b60b77f4926" />
   <meta>
-    <versionId value="17" />
-    <lastUpdated value="2020-09-18T10:27:20.57+00:00" />
+    <versionId value="21" />
+    <lastUpdated value="2021-04-29T09:02:32.966+00:00" />
   </meta>
   <url value="http://helict.de/fhir/StructureDefinition/BasisPatient" />
   <name value="BasisPatient" />
   <status value="draft" />
-  <date value="2020-09-18T10:27:22.4298873+00:00" />
+  <date value="2021-04-29T09:02:16.1946053+00:00" />
   <description value="Diese Profil beinhaltet alle Informationen zu einem Patienten, die zur systemübergreifenden Identifikation notwendig sind." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -285,6 +285,13 @@
     </element>
     <element id="Patient.telecom">
       <path value="Patient.telecom" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
     </element>
     <element id="Patient.telecom.system">
@@ -295,11 +302,58 @@
       <path value="Patient.telecom.value" />
       <min value="1" />
     </element>
-    <element id="Patient.telecom.rank">
+    <element id="Patient.telecom.period">
+      <path value="Patient.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:RegistrationEmail">
+      <path value="Patient.telecom" />
+      <sliceName value="RegistrationEmail" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.telecom:RegistrationEmail.system">
+      <path value="Patient.telecom.system" />
+      <min value="1" />
+      <fixedCode value="email" />
+    </element>
+    <element id="Patient.telecom:RegistrationEmail.value">
+      <path value="Patient.telecom.value" />
+      <short value="Registration email address" />
+      <definition value="The email address used for purpose of registration on the communication systems." />
+      <min value="1" />
+      <example>
+        <label value="Example E-Mail Address" />
+        <valueString value="johndoe@example.org" />
+      </example>
+    </element>
+    <element id="Patient.telecom:RegistrationEmail.use">
+      <path value="Patient.telecom.use" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:RegistrationEmail.rank">
+      <path value="Patient.telecom.rank" />
+      <max value="0" />
+      <fixedPositiveInt value="1" />
+    </element>
+    <element id="Patient.telecom:RegistrationEmail.period">
+      <path value="Patient.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:Phone">
+      <path value="Patient.telecom" />
+      <sliceName value="Phone" />
+      <max value="1" />
+    </element>
+    <element id="Patient.telecom:Phone.system">
+      <path value="Patient.telecom.system" />
+      <fixedCode value="phone" />
+    </element>
+    <element id="Patient.telecom:Phone.rank">
       <path value="Patient.telecom.rank" />
       <max value="0" />
     </element>
-    <element id="Patient.telecom.period">
+    <element id="Patient.telecom:Phone.period">
       <path value="Patient.telecom.period" />
       <max value="0" />
     </element>
