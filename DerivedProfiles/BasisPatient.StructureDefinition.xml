@@ -83,6 +83,8 @@
     <element id="Patient.identifier:VersichertenID_GKV.type.coding:GKV-Type">
       <path value="Patient.identifier.type.coding" />
       <sliceName value="GKV-Type" />
+      <min value="1" />
+      <max value="1" />
       <example>
         <label value="KVID-10" />
         <valueCoding>
@@ -93,6 +95,8 @@
     </element>
     <element id="Patient.identifier:VersichertenID_GKV.type.coding:GKV-Type.system">
       <path value="Patient.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
       <example>
         <label value="KVID-10" />
         <valueUri value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
@@ -100,6 +104,8 @@
     </element>
     <element id="Patient.identifier:VersichertenID_GKV.type.coding:GKV-Type.code">
       <path value="Patient.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="GKV" />
       <example>
         <label value="KVID-10" />
         <valueCode value="GKV" />
@@ -145,6 +151,21 @@
     <element id="Patient.identifier:OrganizationPatientId.use">
       <path value="Patient.identifier.use" />
       <min value="1" />
+    </element>
+    <element id="Patient.identifier:OrganizationPatientId.type.coding">
+      <path value="Patient.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.identifier:OrganizationPatientId.type.coding.system">
+      <path value="Patient.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+    </element>
+    <element id="Patient.identifier:OrganizationPatientId.type.coding.code">
+      <path value="Patient.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="MR" />
     </element>
     <element id="Patient.identifier:OrganizationPatientId.system">
       <path value="Patient.identifier.system" />
