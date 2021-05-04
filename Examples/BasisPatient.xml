@@ -14,30 +14,8 @@
         <code value="MR" />
       </coding>
     </type>
-    <system value="urn:oid:5.3.2.1254.5.42.5" />
+    <system value="urn:oid:1.2.276.0.76.3.1.449" />
     <value value="B79E635C-1DAC-4D9A-AC6B-AA0D5E5A1818" />
-  </identifier>
-  <identifier>
-    <use value="usual" />
-    <type>
-      <coding>
-        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
-        <code value="MR" />
-      </coding>
-    </type>
-    <system value="urn:oid:4.3.2.1254.5.42.4" />
-    <value value="11111" />
-  </identifier>
-  <identifier>
-    <use value="usual" />
-    <type>
-      <coding>
-        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
-        <code value="MR" />
-      </coding>
-    </type>
-    <system value="urn:oid:6.3.2.1254.5.42.6" />
-    <value value="33333" />
   </identifier>
   <identifier>
     <use value="official" />
