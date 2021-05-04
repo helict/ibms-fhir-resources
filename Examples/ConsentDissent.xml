@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Consent xmlns="http://hl7.org/fhir">
+  <id value="f7f0fc6d-c49b-42a6-9c0b-b4a0fd8db720" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2021-05-04T10:08:31.907+00:00" />
+  </meta>
+  <text>
+    <status value="additional" />
+    <div xmlns="http://www.w3.org/1999/xhtml">Beispiel Consent widersprechen</div>
+  </text>
+  <status value="active" />
+  <scope>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/consentscope" />
+      <code value="privacy-consent" />
+    </coding>
+  </scope>
+  <category>
+    <coding>
+      <system value="http://loinc.org" />
+      <code value="59284-0" />
+    </coding>
+  </category>
+  <patient>
+    <identifier>
+      <use value="usual" />
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+          <code value="MR" />
+        </coding>
+      </type>
+      <system value="urn:oid:1.2.276.0.76.3.1.449" />
+      <value value="B79E635C-1DAC-4D9A-AC6B-AA0D5E5A1818" />
+    </identifier>
+  </patient>
+  <dateTime value="2021-05-04" />
+  <organization>
+    <identifier>
+      <use value="official" />
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+          <code value="XX" />
+        </coding>
+      </type>
+      <system value="http://fhir.de/sid/arge-ik/iknr" />
+      <value value="261401030" />
+    </identifier>
+    <display value="Universitätsklinikum Carl Gustav Carus Dresden, Klinik und Poliklinik für Neurologie" />
+  </organization>
+  <sourceReference>
+    <identifier>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+          <code value="RI" />
+        </coding>
+      </type>
+      <system value="urn:oid:1.2.276.0.76.3.1.449" />
+      <value value="123456" />
+    </identifier>
+  </sourceReference>
+  <policy>
+    <uri value="https://ukdd.de/neuro/consent/general-patient-consent.pdf" />
+  </policy>
+  <policy>
+    <uri value="https://medicalsyn.com/templates/consent/example-consent.pdf" />
+  </policy>
+  <policyRule>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      <code value="OPTOUT" />
+    </coding>
+  </policyRule>
+  <provision>
+    <actor>
+      <role>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType" />
+          <code value="CST" />
+        </coding>
+      </role>
+      <reference>
+        <identifier>
+          <system value="http://fhir.de/sid/arge-ik/iknr" />
+          <value value="261401030" />
+        </identifier>
+      </reference>
+    </actor>
+  </provision>
+</Consent>
