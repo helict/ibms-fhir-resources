@@ -13,7 +13,7 @@
   <scope>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/consentscope" />
-      <code value="privacy-consent" />
+      <code value="patient-privacy" />
     </coding>
   </scope>
   <category>
