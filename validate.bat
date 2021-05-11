@@ -8,6 +8,7 @@ if exist ./validator_cli.jar (
         -ig basisprofil-de-r4\ressourcen-profile^
         -ig basisprofil-de-r4\terminologie^
         -profile http://helict.de/fhir/StructureDefinition/BasisPatient^
+        -profile http://helict.de/fhir/StructureDefinition/BasisConsent^
         -version 4.0.1^
 	-recurse -debug
 ) else (

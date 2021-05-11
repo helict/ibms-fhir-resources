@@ -2,8 +2,9 @@
 <Consent xmlns="http://hl7.org/fhir">
   <id value="5e7baacd-66ac-48cb-8200-9ba97152e7a2" />
   <meta>
-    <versionId value="3" />
-    <lastUpdated value="2021-05-04T10:08:24.611+00:00" />
+    <versionId value="8" />
+    <lastUpdated value="2021-05-11T12:03:54.417+00:00" />
+    <profile value="http://helict.de/fhir/StructureDefinition/BasisConsent" />
   </meta>
   <text>
     <status value="additional" />

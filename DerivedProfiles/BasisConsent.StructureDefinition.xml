@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="6161b1f6-5be6-4f5a-9924-bedc58f957cc" />
+  <meta>
+    <versionId value="3" />
+    <lastUpdated value="2021-05-11T12:01:36.472+00:00" />
+  </meta>
+  <url value="http://helict.de/fhir/StructureDefinition/BasisConsent" />
+  <name value="BasisConsent" />
+  <status value="draft" />
+  <date value="2021-05-11T12:01:39.1808903+00:00" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Consent" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Consent" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Consent.scope.coding">
+      <path value="Consent.scope.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.scope.coding.system">
+      <path value="Consent.scope.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/consentscope" />
+    </element>
+    <element id="Consent.scope.coding.code">
+      <path value="Consent.scope.coding.code" />
+      <min value="1" />
+      <fixedCode value="patient-privacy" />
+    </element>
+    <element id="Consent.category">
+      <path value="Consent.category" />
+      <max value="1" />
+    </element>
+    <element id="Consent.category.coding">
+      <path value="Consent.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.category.coding.system">
+      <path value="Consent.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Consent.category.coding.code">
+      <path value="Consent.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="59284-0" />
+    </element>
+    <element id="Consent.patient">
+      <path value="Consent.patient" />
+      <min value="1" />
+    </element>
+    <element id="Consent.patient.identifier">
+      <path value="Consent.patient.identifier" />
+      <min value="1" />
+    </element>
+    <element id="Consent.patient.identifier.type">
+      <path value="Consent.patient.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Consent.patient.identifier.type.coding">
+      <path value="Consent.patient.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.patient.identifier.type.coding.system">
+      <path value="Consent.patient.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+    </element>
+    <element id="Consent.patient.identifier.type.coding.code">
+      <path value="Consent.patient.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="MR" />
+    </element>
+    <element id="Consent.patient.identifier.system">
+      <path value="Consent.patient.identifier.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:1.2.276.0.76.3.1.449" />
+    </element>
+    <element id="Consent.patient.identifier.value">
+      <path value="Consent.patient.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Consent.organization">
+      <path value="Consent.organization" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="identifier.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Consent.organization:OrganizationIKNR">
+      <path value="Consent.organization" />
+      <sliceName value="OrganizationIKNR" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.organization:OrganizationIKNR.identifier">
+      <path value="Consent.organization.identifier" />
+      <min value="1" />
+    </element>
+    <element id="Consent.organization:OrganizationIKNR.identifier.type.coding">
+      <path value="Consent.organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.organization:OrganizationIKNR.identifier.type.coding.system">
+      <path value="Consent.organization.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+    </element>
+    <element id="Consent.organization:OrganizationIKNR.identifier.type.coding.code">
+      <path value="Consent.organization.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="XX" />
+    </element>
+    <element id="Consent.organization:OrganizationIKNR.identifier.system">
+      <path value="Consent.organization.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/sid/arge-ik/iknr" />
+    </element>
+    <element id="Consent.organization:OrganizationIKNR.display">
+      <path value="Consent.organization.display" />
+      <min value="1" />
+    </element>
+    <element id="Consent.policy">
+      <path value="Consent.policy" />
+      <min value="1" />
+    </element>
+    <element id="Consent.policy.uri">
+      <path value="Consent.policy.uri" />
+      <min value="1" />
+    </element>
+    <element id="Consent.policyRule">
+      <path value="Consent.policyRule" />
+      <min value="1" />
+    </element>
+    <element id="Consent.policyRule.coding">
+      <path value="Consent.policyRule.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.policyRule.coding:OptIn">
+      <path value="Consent.policyRule.coding" />
+      <sliceName value="OptIn" />
+      <max value="1" />
+    </element>
+    <element id="Consent.policyRule.coding:OptIn.system">
+      <path value="Consent.policyRule.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+    </element>
+    <element id="Consent.policyRule.coding:OptIn.code">
+      <path value="Consent.policyRule.coding.code" />
+      <min value="1" />
+      <fixedCode value="OPTIN" />
+    </element>
+    <element id="Consent.policyRule.coding:OptOut">
+      <path value="Consent.policyRule.coding" />
+      <sliceName value="OptOut" />
+      <max value="1" />
+    </element>
+    <element id="Consent.policyRule.coding:OptOut.system">
+      <path value="Consent.policyRule.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+    </element>
+    <element id="Consent.policyRule.coding:OptOut.code">
+      <path value="Consent.policyRule.coding.code" />
+      <min value="1" />
+      <fixedCode value="OPTOUT" />
+    </element>
+    <element id="Consent.provision.actor">
+      <path value="Consent.provision.actor" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="role.coding.system" />
+        </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="role.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Consent.provision.actor:ActorCustodian">
+      <path value="Consent.provision.actor" />
+      <sliceName value="ActorCustodian" />
+      <max value="1" />
+    </element>
+    <element id="Consent.provision.actor:ActorCustodian.role.coding">
+      <path value="Consent.provision.actor.role.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Consent.provision.actor:ActorCustodian.role.coding:RoleCustodian">
+      <path value="Consent.provision.actor.role.coding" />
+      <sliceName value="RoleCustodian" />
+    </element>
+    <element id="Consent.provision.actor:ActorCustodian.role.coding:RoleCustodian.system">
+      <path value="Consent.provision.actor.role.coding.system" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType" />
+    </element>
+    <element id="Consent.provision.actor:ActorCustodian.role.coding:RoleCustodian.code">
+      <path value="Consent.provision.actor.role.coding.code" />
+      <fixedCode value="CST" />
+    </element>
+    <element id="Consent.provision.actor:ActorCustodian.reference.identifier">
+      <path value="Consent.provision.actor.reference.identifier" />
+      <min value="1" />
+    </element>
+    <element id="Consent.provision.actor:ActorCustodian.reference.identifier.system">
+      <path value="Consent.provision.actor.reference.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/sid/arge-ik/iknr" />
+    </element>
+    <element id="Consent.provision.actor:ActorCustodian.reference.identifier.value">
+      <path value="Consent.provision.actor.reference.identifier.value" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>
