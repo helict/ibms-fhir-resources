@@ -2,13 +2,13 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="1367aa02-1a96-44e4-9714-3b60b77f4926" />
   <meta>
-    <versionId value="23" />
-    <lastUpdated value="2021-04-29T13:00:28.463+00:00" />
+    <versionId value="25" />
+    <lastUpdated value="2021-05-17T11:26:55.891+00:00" />
   </meta>
   <url value="http://helict.de/fhir/StructureDefinition/BasisPatient" />
   <name value="BasisPatient" />
   <status value="draft" />
-  <date value="2021-04-29T12:55:58.389468Z" />
+  <date value="2021-05-17T11:24:17.4925141Z" />
   <description value="Diese Profil beinhaltet alle Informationen zu einem Patienten, die zur systemübergreifenden Identifikation notwendig sind." />
   <fhirVersion value="4.0.1" />
   <mapping>
